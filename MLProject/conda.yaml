@@ -1,0 +1,15 @@
+name: telco-churn
+
+channels:
+  - defaults
+
+dependencies:
+  - python=3.13
+  - pip
+  - pip:
+      - mlflow
+      - pandas
+      - numpy
+      - scikit-learn
+      - matplotlib
+      - seaborn
