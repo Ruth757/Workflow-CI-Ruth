@@ -27,7 +27,8 @@ jobs:
           pip install matplotlib
           pip install seaborn
 
-      - name: Run MLProject
+      - name: Run Training
         run: |
           cd MLProject
-          mlflow run .
+          python modelling.py
+      
