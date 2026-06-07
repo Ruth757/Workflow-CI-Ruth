@@ -16,7 +16,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version: "3.13"
 
       - name: Install Dependencies
         run: |
@@ -27,8 +27,7 @@ jobs:
           pip install matplotlib
           pip install seaborn
 
-      - name: Run Training
+      - name: Run MLflow Project
         run: |
           cd MLProject
-          python modelling.py
-      
+          mlflow run . --env-manager local

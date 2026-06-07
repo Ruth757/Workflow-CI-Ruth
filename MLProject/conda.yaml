@@ -1,7 +1,4 @@
-name: telco-churn
-
-channels:
-  - defaults
+name: telco-churn-env
 
 dependencies:
   - python=3.13
@@ -12,4 +9,4 @@ dependencies:
       - numpy
       - scikit-learn
       - matplotlib
-      - seaborn
+      - seaborns
