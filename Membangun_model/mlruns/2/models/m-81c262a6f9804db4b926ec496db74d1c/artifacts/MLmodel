@@ -1,0 +1,23 @@
+artifact_path: file:C:/Users/ASUS/Documents/Eksperimen_SML_Ruth/Membangun_model/mlruns/2/models/m-81c262a6f9804db4b926ec496db74d1c/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.0
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.9.0
+    skops_trusted_types: null
+mlflow_version: 3.13.0
+model_id: m-81c262a6f9804db4b926ec496db74d1c
+model_size_bytes: 526304
+model_uuid: m-81c262a6f9804db4b926ec496db74d1c
+prompts: null
+run_id: 855ad4fd2f554af9a2ef1f940a0d45ff
+utc_time_created: '2026-06-08 10:58:01.177996'
