@@ -1,6 +1,4 @@
-name: telco-churn
-
-conda_env: conda.yaml
+name: MLProject
 
 entry_points:
   main:

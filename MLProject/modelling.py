@@ -5,34 +5,26 @@ import mlflow.sklearn
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report
 
-# Aktifkan autolog MLflow
+# MLflow autolog
 mlflow.sklearn.autolog()
 
-# Load dataset
-X_train = pd.read_csv("X_train.csv")
-X_test = pd.read_csv("X_test.csv")
+# Load data (HARUS DI DALAM MLProject/data/)
+X_train = pd.read_csv("data/X_train.csv")
+X_test = pd.read_csv("data/X_test.csv")
+y_train = pd.read_csv("data/y_train.csv").values.ravel()
+y_test = pd.read_csv("data/y_test.csv").values.ravel()
 
-y_train = pd.read_csv("y_train.csv").values.ravel()
-y_test = pd.read_csv("y_test.csv").values.ravel()
+with mlflow.start_run():
 
-# Model
-model = RandomForestClassifier(
-    n_estimators=100,
-    random_state=42
-)
+    model = RandomForestClassifier(n_estimators=100, random_state=42)
 
-# Training
-model.fit(X_train, y_train)
+    model.fit(X_train, y_train)
 
-# Prediksi
-y_pred = model.predict(X_test)
+    y_pred = model.predict(X_test)
 
-# Evaluasi
-accuracy = accuracy_score(y_test, y_pred)
+    accuracy = accuracy_score(y_test, y_pred)
 
-print(f"Accuracy : {accuracy:.4f}")
+    print("Accuracy:", accuracy)
+    print(classification_report(y_test, y_pred))
 
-print("\nClassification Report")
-print(classification_report(y_test, y_pred))
-
-print("Training selesai dan tercatat di MLflow")
+    mlflow.log_metric("accuracy", accuracy)
