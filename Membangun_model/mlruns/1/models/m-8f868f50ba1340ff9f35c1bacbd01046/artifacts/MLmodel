@@ -1,0 +1,41 @@
+artifact_path: file:C:/Users/ASUS/Documents/Eksperimen_SML_Ruth/Membangun_model/mlruns/1/models/m-8f868f50ba1340ff9f35c1bacbd01046/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.0
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.9.0
+    skops_trusted_types: null
+is_signature_from_type_hint: false
+mlflow_version: 3.13.0
+model_id: m-8f868f50ba1340ff9f35c1bacbd01046
+model_size_bytes: 17598380
+model_uuid: m-8f868f50ba1340ff9f35c1bacbd01046
+prompts: null
+run_id: 6cb6181e86eb4e949810f3b92429e146
+signature:
+  inputs: '[{"type": "double", "name": "0", "required": true}, {"type": "double",
+    "name": "1", "required": true}, {"type": "double", "name": "2", "required": true},
+    {"type": "double", "name": "3", "required": true}, {"type": "double", "name":
+    "4", "required": true}, {"type": "double", "name": "5", "required": true}, {"type":
+    "double", "name": "6", "required": true}, {"type": "double", "name": "7", "required":
+    true}, {"type": "double", "name": "8", "required": true}, {"type": "double", "name":
+    "9", "required": true}, {"type": "double", "name": "10", "required": true}, {"type":
+    "double", "name": "11", "required": true}, {"type": "double", "name": "12", "required":
+    true}, {"type": "double", "name": "13", "required": true}, {"type": "double",
+    "name": "14", "required": true}, {"type": "double", "name": "15", "required":
+    true}, {"type": "double", "name": "16", "required": true}, {"type": "double",
+    "name": "17", "required": true}, {"type": "double", "name": "18", "required":
+    true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-06-09 14:00:21.114804'
