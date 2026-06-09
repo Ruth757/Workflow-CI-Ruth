@@ -16,18 +16,14 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.13"
+          python-version: "3.11"
 
       - name: Install Dependencies
         run: |
-          pip install mlflow
-          pip install pandas
-          pip install numpy
-          pip install scikit-learn
-          pip install matplotlib
-          pip install seaborn
+          cd MLProject
+          pip install -r requirements.txt
 
-      - name: Run MLflow Project
+      - name: Run Training
         run: |
           cd MLProject
-          mlflow run . --env-manager local
+          python modelling.py
