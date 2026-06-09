@@ -1,4 +1,4 @@
-name: Train Model
+name: Train Model (MLflow Project)
 
 on:
   push:
@@ -18,12 +18,15 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install Dependencies
+      - name: Install MLflow
         run: |
-          cd MLProject
-          pip install -r requirements.txt
+          pip install mlflow
 
-      - name: Run Training
+      - name: Install Dependencies (optional jika pakai conda.yaml MLflow)
         run: |
           cd MLProject
-          python modelling.py
+          pip install -r requirements.txt || true
+
+      - name: Run MLflow Project
+        run: |
+          mlflow run MLProject/ --env-manager local
